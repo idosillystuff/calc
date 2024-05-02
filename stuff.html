@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>Welcome to the Slut Calculator</h1>
+
+    <p>Find out how many miles you went in your girl for! Or how many miels have been ran in you!</p>
+    
+    <button onclick="main()">Start Calculation</button>
+
+<script>
+class Oh {
+    constructor(strokes, times, inches) {
+      this.strokes = strokes;
+      this.times = times;
+      this.inches = inches;
+    }
+  
+    calculation() {
+      const result = this.strokes * this.times * this.inches;
+      const miles = result / 63360;
+      return miles;
+    }
+  }
+  
+  // Simulation of the main method in JavaScript
+  function main() {
+    alert("Hi slut!");  // Changed the greeting to be more appropriate
+    const strokesInput = prompt("Enter strokes:");
+    const strokes = parseFloat(strokesInput);
+  
+    const timesInput = prompt("Enter times:");
+    const times = parseFloat(timesInput);
+  
+    const inchesInput = prompt("Enter inches:");
+    const inches = parseFloat(inchesInput);
+  
+    const obj = new Oh(strokes, times, inches);
+    const miles = obj.calculation();  // Call the calculation method to compute the result
+    alert("Damn, you've been railed for " + miles.toFixed(2) + " miles.");  // Using toFixed(2) for better formatted output
+  }
+  
+  main(); // This line calls the main function to execute
+  
+</script>
+
+</body>
+</html>
