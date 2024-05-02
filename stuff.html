@@ -2,46 +2,49 @@
 <html>
 <body>
 
-    <h1>Welcome to the Slut Calculator</h1>
+<h1>Welcome to the Mileage Calculator</h1>
+<p>Find out how far you've traveled!</p>
 
-    <p>Find out how many miles you went in your girl for! Or how many miles have been ran in you!</p>
-    
-    <button onclick="main()">Start Calculation</button>
+<form id="calculatorForm">
+    <label for="strokes">Enter strokes:</label>
+    <input type="number" id="strokes" name="strokes" required><br><br>
+
+    <label for="times">Enter times:</label>
+    <input type="number" id="times" name="times" required><br><br>
+
+    <label for="inches">Enter inches:</label>
+    <input type="number" id="inches" name="inches" required><br><br>
+
+    <button type="button" onclick="calculateMiles()">Calculate Miles</button>
+</form>
+
+<p id="result"></p>
 
 <script>
 class Oh {
     constructor(strokes, times, inches) {
-      this.strokes = strokes;
-      this.times = times;
-      this.inches = inches;
+        this.strokes = strokes;
+        this.times = times;
+        this.inches = inches;
     }
-  
-    calculation() {
-      const result = this.strokes * this.times * this.inches;
-      const miles = result / 63360;
-      return miles;
-    }
-  }
-  
-  // Function defined to be called on button click
-  function main() {
-    alert("Hi slut!");  // Greeting
-    const strokesInput = prompt("Enter strokes:");
-    const strokes = parseFloat(strokesInput);
-  
-    const timesInput = prompt("Enter times:");
-    const times = parseFloat(timesInput);
-  
-    const inchesInput = prompt("Enter inches:");
-    const inches = parseFloat(inchesInput);
-  
-    const obj = new Oh(strokes, times, inches);
-    const miles = obj.calculation();  // Call the calculation method to compute the result
-    alert("Damn, you've been railed for " + miles.toFixed(2) + " miles.");  // Using toFixed(2) for better formatted output
-  }
-  
-  // Remove main() from here to prevent automatic execution on load
 
+    calculation() {
+        const result = this.strokes * this.times * this.inches;
+        const miles = result / 63360;
+        return miles;
+    }
+}
+
+function calculateMiles() {
+    const strokes = parseFloat(document.getElementById('strokes').value);
+    const times = parseFloat(document.getElementById('times').value);
+    const inches = parseFloat(document.getElementById('inches').value);
+
+    const obj = new Oh(strokes, times, inches);
+    const miles = obj.calculation();
+
+    document.getElementById('result').textContent = "You've traveled " + miles.toFixed(2) + " miles.";
+}
 </script>
 
 </body>
