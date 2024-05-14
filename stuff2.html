@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrity Feet Ratings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 20px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .rating {
+            margin: 10px 0;
+            font-size: 20px;
+        }
+        .star {
+            cursor: pointer;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rate Celebrity Feet</h1>
+        <p>How would you rate these feet?</p>
+        <div class="rating">
+            <span class="star" onclick="rate(1)">&#9733;</span>
+            <span class="star" onclick="rate(2)">&#9733;</span>
+            <span class="star" onclick="rate(3)">&#9733;</span>
+            <span class="star" onclick="rate(4)">&#9733;</span>
+            <span class="star" onclick="rate(5)">&#9733;</span>
+        </div>
+        <p id="ratingResult"></p>
+    </div>
+
+    <script>
+        function rate(rating) {
+            const stars = document.querySelectorAll('.star');
+            stars.forEach((star, idx) => {
+                star.style.color = idx < rating ? 'gold' : 'grey';
+            });
+            document.getElementById('ratingResult').innerText = "You rated this " + rating + " out of 5 stars.";
+        }
+    </script>
+</body>
+</html>
