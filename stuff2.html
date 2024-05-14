@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             background: #f4f4f4;
-            margin: 20px;
+            margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
@@ -20,8 +20,10 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
         }
-        .rating {
+        .rating, .footer {
             margin: 10px 0;
             font-size: 20px;
         }
@@ -29,12 +31,15 @@
             cursor: pointer;
             color: gold;
         }
+        .footer {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Rate Celebrity Feet</h1>
-        <p>How would you rate these feet?</p>
+        <img src="placeholder-image.jpg" alt="Celebrity Feet" style="width:100%; margin-bottom:10px;">
         <div class="rating">
             <span class="star" onclick="rate(1)">&#9733;</span>
             <span class="star" onclick="rate(2)">&#9733;</span>
@@ -42,7 +47,10 @@
             <span class="star" onclick="rate(4)">&#9733;</span>
             <span class="star" onclick="rate(5)">&#9733;</span>
         </div>
-        <p id="ratingResult"></p>
+        <p id="ratingResult">Average Rating: 3.5 (200 votes)</p>
+        <div class="footer">
+            <a href="homepage.html">View Rated Feet Gallery</a>
+        </div>
     </div>
 
     <script>
@@ -51,7 +59,8 @@
             stars.forEach((star, idx) => {
                 star.style.color = idx < rating ? 'gold' : 'grey';
             });
-            document.getElementById('ratingResult').innerText = "You rated this " + rating + " out of 5 stars.";
+            // Placeholder for dynamically updating the rating
+            document.getElementById('ratingResult').innerText = "You rated this " + rating + " out of 5 stars. Thanks for your feedback!";
         }
     </script>
 </body>
